@@ -21,11 +21,13 @@
 from loader import Loader
 from saver import Saver
 from exe.engine.node import Node
+import sys
 class Run:
   @staticmethod
   def  process():
-    L = Loader("666.txt")
-    S = Saver("prova2.elp",L._title)
+    arxiu = sys.argv[1]
+    L = Loader(arxiu + ".txt")
+    S = Saver(arxiu + ".elp",L._title)
     N = S.getRoot()
     print len(L.Temes)
     for T in L.Temes:
