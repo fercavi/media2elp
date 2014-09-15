@@ -10,7 +10,7 @@ El programa consta de 3 arxius python, un Loader, un Saver i un runner i un serv
 <li>El controlador (Run.py) guarda les dades amb el saver
 </ol>
 </p>
-Nota: Cal configurar en la mediawiki que agarre este servidor
+Nota: Cal configurar en la mediawiki que agarre este servidor<br/>
 Nota2: Cal les carpetes de l'exe learning per a poder executar el parser, ja que les utilitza
 
 
@@ -23,6 +23,6 @@ The program consists of three python files, a loader, a Saver and a runner and a
 <li>The controller (Run.py) loader loads the data structures necessary to create .elp 
 <li>The controller (Run.py) saves the data
 </ol>
-Note: You must configure the grip that this server MediaWiki
+Note: You must configure the grip that this server MediaWiki<br/>
 Note 2: El folders of exelearning are needed to execute the parser
 </p>
