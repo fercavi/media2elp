@@ -1,4 +1,6 @@
+
 # -*- coding: utf-8 -*-
+#!/usr/bin/env python
 # ===========================================================================
 # Runer (Exemple of use)
 # Copyright 2014 Run (Elp Exporter from mediawiki) Vicent Fernandez i Capilla
@@ -18,18 +20,20 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 # ===========================================================================
 
+
 from loader import Loader
 from saver import Saver
 from exe.engine.node import Node
 import sys
+import os
 class Run:
   @staticmethod
   def  process():
     arxiu = sys.argv[1]
+    os.environ["HOME"] = "/var/www"
     L = Loader(arxiu + ".txt")
     S = Saver(arxiu + ".elp",L._title)
-    N = S.getRoot()
-    print len(L.Temes)
+    N = S.getRoot()    
     for T in L.Temes:
       Pare = S.AddNode(N, T.title)
       for W in T.llistaItems:

@@ -28,8 +28,9 @@ class wikiItem:
     self.url = Url
 class TemaItem:
   title = ""
+  url = ""
   llistaItems = []
-  def __init__(self,Title=""):
+  def __init__(self,Title="" ):
     self.title = Title
 
 class Loader:
@@ -46,15 +47,26 @@ class Loader:
     s = open(self._inputfilename).read()
     x = json.loads(s)
     self._title = x["title"]
-    for capitol in x["items"]:
-      T = TemaItem(capitol["title"])
-      #evitar que la llista siga variable estatica, ya que si no s'assigna valor
-      #totes els variables en python ho son
-      T.llistaItems = []
-      for pagina in capitol["items"]:
-        W = wikiItem(pagina["title"],pagina["url"])
-        T.llistaItems.append(W)
-      self.Temes.append(T)
+    if x.has_key("items"):
+      First = x["items"][0]
+      if First["type"] == "chapter":
+        for capitol in x["items"]:
+          T = TemaItem(capitol["title"])
+          #evitar que la llista siga variable estatica, ya que si no s'assigna valor
+          #totes els variables en python ho son
+          T.llistaItems = []
+          if capitol.has_key("items"):
+            for pagina in capitol["items"]:
+              W = wikiItem(pagina["title"],pagina["url"])
+              T.llistaItems.append(W)
+          self.Temes.append(T)
+      else:
+        T=TemaItem("Lliurex")
+        T.llistaItems = []
+        for pagina in x["items"]:          
+          W = wikiItem(pagina["title"],pagina["url"])
+          T.llistaItems.append(W)
+        self.Temes.append(T)
     self._isLoaded = True
 
   def process(self):
