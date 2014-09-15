@@ -11,6 +11,7 @@ El programa consta de 3 arxius python, un Loader, un Saver i un runner i un serv
 </ol>
 </p>
 Nota: Cal configurar en la mediawiki que agarre este servidor
+Nota2: Cal les carpetes de l'exe learning per a poder executar el parser, ja que les utilitza
 
 
 English Version
@@ -23,4 +24,5 @@ The program consists of three python files, a loader, a Saver and a runner and a
 <li>The controller (Run.py) saves the data
 </ol>
 Note: You must configure the grip that this server MediaWiki
+Note 2: El folders of exelearning are needed to execute the parser
 </p>
