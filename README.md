@@ -7,7 +7,20 @@ El programa consta de 3 arxius python, un Loader, un Saver i un runner i un serv
 <ol>
 <li>Mediawiki envia al servidor php (elprenderer.php) la informació en JSON. Tenim un exemple en 666.txt. El servidor php llegirà un arxiu (id.txt) per tal de saver quin és el següent id a utilitzar. I executarà el controlador (run.py) passant-li com a paràmetre el id corresponent.
 <li>El controlador (Run.py) carrega amb el loader les estructures de dades necessàries per crear el .elp 
-<li>El controlador (Rune.pyr) guarda les dades amb el saver
+<li>El controlador (Run.py) guarda les dades amb el saver
 </ol>
 </p>
 Nota: Cal configurar en la mediawiki que agarre este servidor
+
+
+English Version
+===============
+The program consists of three python files, a loader, a Saver and a runner and a PHP server that generates the text file input. 
+<p>
+<ol>
+<li>MediaWiki server sends php (elprenderer.php) information in JSON. One example 666.txt. PHP read a file server (id.txt) to what the next id saver to use. I run the driver (run.py) passing as parameter the corresponding id. 
+<li>The controller (Run.py) loader loads the data structures necessary to create .elp 
+<li>The controller (Run.py) keeps the data saver 
+</ol>
+Note: You must configure the grip that this server MediaWiki
+</p>
