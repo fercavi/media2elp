@@ -20,7 +20,7 @@ The program consists of three python files, a loader, a Saver and a runner and a
 <ol>
 <li>MediaWiki server sends php (elprenderer.php) information in JSON. One example 666.txt. PHP read a file server (id.txt) to what the next id saver to use. I run the driver (run.py) passing as parameter the corresponding id. 
 <li>The controller (Run.py) loader loads the data structures necessary to create .elp 
-<li>The controller (Run.py) keeps the data saver 
+<li>The controller (Run.py) saves the data
 </ol>
 Note: You must configure the grip that this server MediaWiki
 </p>
