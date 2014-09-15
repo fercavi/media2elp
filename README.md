@@ -10,3 +10,4 @@ El programa consta de 3 arxius python, un Loader, un Saver i un runner i un serv
 <li>El controlador (Rune.pyr) guarda les dades amb el saver
 </ol>
 </p>
+Nota: Cal configurar en la mediawiki que agarre este servidor
