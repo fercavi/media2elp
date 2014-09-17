@@ -18,22 +18,12 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 # ===========================================================================
 from exe.engine.package import Package
-from exe.globals import application
+
 from exe.engine.wikipediaidevice import *
 from exe.engine.node import Node
-import optparse
-
-from exe.application import Application
-
-
-
 class Saver():
 
   def __init__(self,outputfilename="prova2.elp",titol="Exportacio de LliureX"):
-
-    application = Application()
-    application.loadConfiguration()
-    optparse._ = application.config.locales[application.config.locale].gettext
 
     self._outputfile = outputfilename
     self._titol = titol

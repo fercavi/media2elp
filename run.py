@@ -24,16 +24,35 @@
 from loader import Loader
 from saver import Saver
 from exe.engine.node import Node
+from exe.engine.path import Path
+from exe.globals import application
+from exe.application import Application
+import gettext
 import sys
 import os
+import optparse
+
+
 class Run:
   @staticmethod
   def  process():
     arxiu = sys.argv[1]
-    os.environ["HOME"] = "/var/www"
+    #configuració per a portable
+    os.environ["HOME"] = "./exe"
+    #exePath = os.path.abspath(sys.argv[0] )
+    #exeDir  = os.path.dirname(exePath + "/exe")
+    #pythonPath = os.path.split(exeDir)[0]
+
+    application = Application()
+    application.portable = True
+    application.standalone = True
+    application.loadConfiguration()
+    from  exe.engine.linuxconfig import LinuxConfig
+    config = LinuxConfig()
+
     L = Loader(arxiu + ".txt")
     S = Saver(arxiu + ".elp",L._title)
-    N = S.getRoot()    
+    N = S.getRoot()
     for T in L.Temes:
       Pare = S.AddNode(N, T.title)
       for W in T.llistaItems:
