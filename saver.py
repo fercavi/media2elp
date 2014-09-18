@@ -18,8 +18,8 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 # ===========================================================================
 from exe.engine.package import Package
+from wikipediaidevicelliurex import WikipediaIdeviceLliurex
 
-from exe.engine.wikipediaidevice import *
 from exe.engine.node import Node
 class Saver():
 
@@ -29,16 +29,18 @@ class Saver():
     self._titol = titol
 
     self.document = Package('LLiureX')
+
     self.document.set_name('Lliurex')
     self.document.set_description('Lliurex')
     self.document.set_author('Lliurex')
     self.document.set_title('Documentacio LLiurex')
 
   def addWikipedia(self,title,url,parent):
-     W = WikipediaIdevice(url)
+     W = WikipediaIdeviceLliurex(url)
      W.set_title(title)
-     W.edit = False;
+     W.edit = False
      W.loadArticle("")
+     W.undo = False
      parent.addIdevice(W)
 
   def save(self):

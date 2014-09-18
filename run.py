@@ -39,17 +39,8 @@ class Run:
     arxiu = sys.argv[1]
     #configuració per a portable
     os.environ["HOME"] = "./exe"
-    #exePath = os.path.abspath(sys.argv[0] )
-    #exeDir  = os.path.dirname(exePath + "/exe")
-    #pythonPath = os.path.split(exeDir)[0]
-
     application = Application()
-    application.portable = True
-    application.standalone = True
     application.loadConfiguration()
-    from  exe.engine.linuxconfig import LinuxConfig
-    config = LinuxConfig()
-
     L = Loader(arxiu + ".txt")
     S = Saver(arxiu + ".elp",L._title)
     N = S.getRoot()
